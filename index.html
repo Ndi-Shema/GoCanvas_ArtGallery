@@ -1,0 +1,142 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!--Icons-->
+    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.8/css/line.css">
+
+    <!--Fonts-->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;600;800;900&display=swap" rel="stylesheet">
+    <title>GoCanvas Gallery</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <main>
+        
+        <h2>Go<span>Canvas</span></h2>
+
+        <div class="container">
+            <div class="heading">
+                <h3>Art <span>CoLlEcTiOn</span></h3>
+            </div>
+        </div>
+        
+
+        <ul class="categories">
+            <li><a class="category" href="index.html">HoMe</a></li>
+            <li><a class="category" href="index2.html">Abstract</a></li>
+            <li><a class="category" href="index3.html">Nature</a></li>
+            <li><a class="category" href="index4.html">Famous</a></li>
+            
+        </ul>
+
+        <section class="galleries">
+
+            <article class="gallery">
+                <a href="index2.html">
+                    <div class="gallery__images">
+                        <div class="gallery__images-thumbnail">
+                            <img src="./collection1/1.jpeg" alt="">
+                        </div>
+                        <div class="gallery__images-more">
+                            <div><img src="./collection1/2.jpg" alt=""></div> 
+                            <div><img src="./collection1/3.jpg" alt=""></div>
+                            <div><img src="./collection1/4.jpg" alt=""></div>
+                        </div>
+                    </div>
+                    </a>
+
+                    <div class="gallery__info">
+                        <p>Abstract</p>
+                        <small><i class="uil uil-scenery"></i>12</small>
+                    </div>
+                
+            </article>
+
+            <article class="gallery">
+                <a href="index3.html">
+                    <div class="gallery__images">
+                        <div class="gallery__images-thumbnail">
+                            <img src="./collection2/Nature1.jpg" alt="">
+                        </div>
+                        <div class="gallery__images-more">
+                            <div><img src="./collection2/Nature2.jpg" alt=""></div> 
+                            <div><img src="./collection2/Nature3.jpg" alt=""></div>
+                            <div><img src="./collection2/Nature4.jpg" alt=""></div>
+                        </div>
+                    </div>
+                </a>
+
+                    <div class="gallery__info">
+                        <p>Nature</p>
+                        <small><i class="uil uil-scenery"></i>12</small>
+                    </div>
+                
+            </article>
+
+            <article class="gallery">
+                <a href="index4.html">
+                    <div class="gallery__images">
+                        <div class="gallery__images-thumbnail">
+                            <img src="./collection3/famous1.jpg" alt="">
+                        </div>
+                        <div class="gallery__images-more">
+                            <div><img src="./collection3/famous2.jpg" alt="">  </div>
+                            <div><img src="./collection3/famous3.jpg" alt=""></div>
+                            <div><img src="./collection3/famous4.jpg" alt=""></div>
+                        </div>
+                    </div>
+                </a>
+
+                <div class="gallery__info">
+                    <p>Nature</p>
+                    <small><i class="uil uil-scenery"></i>14</small>
+                </div>
+            </article>
+
+        </section>
+    </main>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+          const smoothLinks = document.querySelectorAll('.smooth-transition');
+    
+          for (const link of smoothLinks) {
+            link.addEventListener('click', smoothScroll);
+          }
+    
+          function smoothScroll(e) {
+            e.preventDefault();
+            const targetId = this.getAttribute('href');
+            const targetElement = document.querySelector(targetId);
+            const targetPosition = targetElement.offsetTop;
+            const startPosition = window.pageYOffset;
+            const distance = targetPosition - startPosition;
+            const duration = 800; // Adjust the duration to control the speed of the transition
+            let startTimestamp = null;
+    
+            function animation(currentTimestamp) {
+              if (!startTimestamp) startTimestamp = currentTimestamp;
+              const progress = currentTimestamp - startTimestamp;
+              window.scrollTo(0, easeInOutCubic(progress, startPosition, distance, duration));
+              if (progress < duration) {
+                requestAnimationFrame(animation);
+              }
+            }
+    
+            function easeInOutCubic(t, b, c, d) {
+              t /= d / 2;
+              if (t < 1) return c / 2 * t * t * t + b;
+              t -= 2;
+              return c / 2 * (t * t * t + 2) + b;
+            }
+    
+            requestAnimationFrame(animation);
+            setTimeout(function() {
+              window.location = targetId;
+            }, duration);
+          }
+        });
+      </script>
+</body>
+</html>
