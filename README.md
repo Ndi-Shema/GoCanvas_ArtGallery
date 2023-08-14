@@ -1,8 +1,10 @@
 **GoCanvas Gallery**
 
+
 GoCanvas Gallery is a simple and stylish online art gallery showcasing different categories of artwork. This README will guide you through the process of setting up and running the website locally on your machine.
 
 **Table of Contents**
+
 
 - [Getting Started](#getting-started)
 - [Prerequisites](#prerequisites)
@@ -11,11 +13,12 @@ GoCanvas Gallery is a simple and stylish online art gallery showcasing different
 - [Contributing](#contributing)
 - [License](#license)
 
-**Getting Started
+**Getting Started**
 
 These instructions will help you get a copy of the project up and running on your local machine for development and testing purposes.
 
 **Prerequisites**
+
 
 To run this project, you need to have the following software installed on your machine:
 
@@ -32,6 +35,7 @@ To run this project, you need to have the following software installed on your m
 cd gocanvas-gallery
 
 **Usage**
+
 1. Open the project folder in your chosen code editor.
 
 2. Open the index.html file to view the Home Page of the GoCanvas Gallery website.
@@ -46,6 +50,7 @@ cd gocanvas-gallery
 4. To view the website, you can use a local development server or simply open the HTML files in your web browser.
 
 **Contributing**
+
 If you'd like to contribute to this project, follow these steps:
 
 1. Fork this repository on GitHub.
